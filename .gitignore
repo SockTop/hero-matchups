@@ -1,0 +1,14 @@
+.dotabuff-content
+.matchups.json
+
+*~*
+*.pyc
+
+# setuptools files
+build
+dist
+*.egg-info
+
+# ipython notebook files
+*.ipynb
+.ipynb_checkpoints
