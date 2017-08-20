@@ -4,7 +4,7 @@ import os
 from bs4 import BeautifulSoup
 
 def fetch_hero_matchups(hero):  
-    soup = BeautifulSoup(open('/users/samuelsilberstein/workspace/hero-matrix/.dotabuff-content/heroes/{}/matchups'.format(hero), 'r'), 'html.parser')
+    soup = BeautifulSoup(open('.dotabuff-content/heroes/{}/matchups'.format(hero), 'r'), 'html.parser')
     
     matchups = soup.find_all('tbody')[1].find_all('tr')
     
@@ -22,7 +22,7 @@ def fetch_hero_matchups(hero):
 
 def generate_matrix():
     matchups = {}
-    for hero in os.listdir('/users/samuelsilberstein/workspace/hero-matrix/.dotabuff-content/heroes'):
+    for hero in os.listdir('.dotabuff-content/heroes'):
         try:
             matchup = fetch_hero_matchups(hero)
 
